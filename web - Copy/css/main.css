@@ -1,0 +1,25 @@
+body{
+	text-align: center;
+	background-image:url(../img/im.jpg);
+	 background-repeat:no-repeat;
+	background-size: 100%;
+	background-position: center;
+	background-attachment: fixed;
+}
+.textsum{
+	font-size: 24px;
+}
+.stil {
+	margin-top: 50px;
+max-width: 500px;
+margin-left: auto;
+margin-right: auto;
+}
+.card-header{
+	margin-right:0px;
+	margin-left: 0px;
+	margin-top: 0px;
+}
+.btnt{
+	font-size: 24px;
+}

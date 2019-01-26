@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<div class="stil jumbotron" id="calculator">
+	<h1>Car builder</h1>
+	<br>
+		<div class="textsum alert alert-primary">
+		Order price: {{orderPrice}} $ 
+	    </div>
+
+<p>
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Generalize
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+<p>Name: {{selectedCar !== null ? selectedCar.name : ""}}</p>
+<p>Color: {{selectedColor !== null ? selectedColor.name : ""}}</p>
+<p>Motor: {{selectedMotor !== null ? selectedMotor.name : ""}}</p>
+<p>Glass: {{selectedGlas !== null ? selectedGlas.name : ""}}</p>
+  </div>
+</div>
+		<br>
+		<h4 >Car:</h4> 
+		<select class="form-control" @change="calcul(carList)" v-model="selectedCar">
+			<option v-for="car in carList" :value="car">
+			{{car.name}} [{{car.price}} $]</option>
+		</select>
+		<br>
+		<h4 >Color:</h4> 
+		<select class="form-control" @change="calcul(carColor)" v-model="selectedColor">
+			<option v-for="carColor in carColor" :value="carColor">{{carColor.name}} [+ {{carColor.price}} $]</option>
+		</select>
+		<span class="col"></span>
+		<br>
+		<h4 >Motor: </h4>
+		<select class="form-control" @change="calcul(carMotor)" v-model="selectedMotor">
+			<option v-for="carMotor in carMotor" :value="carMotor">{{carMotor.name}} [+ {{carMotor.price}} $]</option>
+		</select>
+		<br>
+		<h4 >carGlas:</h4>
+		<select class="form-control" @change="calcul(carGlas)" v-model="selectedGlas">
+			<option v-for="carGlas in carGlas" :value="carGlas">{{carGlas.name}} [+ {{carGlas.price}} $]</option>
+		</select>
+		<br>
+		<br>
+		<button class="btn btn-danger btnt" @click="remove()">Remove</button>
+
+	</div>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script type="text/javascript" src="js/java.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>
